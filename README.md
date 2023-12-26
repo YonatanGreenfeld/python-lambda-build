@@ -4,6 +4,7 @@ These images are meant to be used with the
 [serverless-python-requirements-plugin](https://www.serverless.com/plugins/serverless-python-requirements).
 
 ### Supported versions:
+- 3.12
 - 3.11
 - 3.10
 - 3.9
