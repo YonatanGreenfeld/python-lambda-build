@@ -10,13 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
         platform: ['x86_64', 'arm64']
         include:
           - platform: 'x86_64'
             docker-platform: 'linux/amd64'
           - platform: 'arm64'
             docker-platform: 'linux/arm64'
+          - python-version: '3.8'
+            linux-version: 'amazonlinux2'
+          - python-version: '3.9'
+            linux-version: 'amazonlinux2'
+          - python-version: '3.10'
+            linux-version: 'amazonlinux2'
+          - python-version: '3.11'
+            linux-version: 'amazonlinux2'
+          - python-version: '3.12'
+            linux-version: 'amazonlinux2023'
     permissions:
       packages: write
       contents: read
@@ -45,7 +55,7 @@ jobs:
         build-args: |
           VERSION=${{ matrix.python-version }}
           PLATFORM=${{ matrix.platform }}
-        file: ./docker/Dockerfile
+        file: ./docker/Dockerfile-${{ matrix.linux-version }}
         platforms: ${{ matrix.docker-platform }}
 
     - name: Image build complete
