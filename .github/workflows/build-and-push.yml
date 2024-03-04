@@ -56,7 +56,6 @@ jobs:
           VERSION=${{ matrix.python-version }}
           PLATFORM=${{ matrix.platform }}
         file: ./docker/Dockerfile-${{ matrix.linux-version }}
-        platforms: ${{ matrix.docker-platform }}
 
     - name: Image build complete
       run: echo "Image for Python ${{ matrix.python-version }} on ${{ matrix.platform }} built and pushed successfully."
