@@ -1,6 +1,6 @@
 ARG VERSION
 ARG PLATFORM
 FROM public.ecr.aws/lambda/python:$VERSION-$PLATFORM
-RUN dnf install -y git && dnf clean all
+RUN dnf install -y git findutils && dnf clean all
 
 ENTRYPOINT []
