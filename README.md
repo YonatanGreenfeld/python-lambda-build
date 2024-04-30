@@ -16,7 +16,7 @@ These images are meant to be used with the
 ### Usage
 Pulling the image:
 ```shell
-docker pull ghcr.io/yonatangreenfeld/python-lambda-build/python:3.10-x86_64
+docker ghcr.io/jitsecurity/python-lambda-build/python:3.8-x86_64
 ```
 
 In the `serverless.yml` file:
@@ -24,5 +24,5 @@ In the `serverless.yml` file:
 custom:
   pythonRequirements:
     dockerizePip: true
-    dockerImage: ghcr.io/yonatangreenfeld/python-lambda-build/python:3.10-x86_64
+    dockerImage: ghcr.io/jitsecurity/python-lambda-build/python:3.8-x86_64
 ```
